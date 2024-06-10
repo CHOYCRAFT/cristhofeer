@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reparaciones Chamoy </title>
+<style>
+    body {
+        font-family: Arial, sans-serif; /* Establece la familia de fuentes del texto en Arial o, si no está disponible, en una fuente sans-serif. */
+        margin: 0; /* Elimina el margen predeterminado del cuerpo de la página. */
+        padding: 0; /* Elimina el relleno predeterminado del cuerpo de la página. */
+        box-sizing: border-box; /* Incluye el borde y el relleno en el ancho y alto totales de los elementos. */
+    }
+    
+    header {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor del encabezado. */
+        justify-content: space-between; /* Distribuye el espacio libre entre los elementos del encabezado, separándolos al máximo. */
+        align-items: center; /* Alinea los elementos del encabezado verticalmente al centro. */
+        background-color: #f4f4f4; /* Establece el color de fondo del encabezado a un gris claro. */
+        padding: 10px 20px; /* Aplica un relleno de 10px arriba y abajo y 20px a los lados del encabezado. */
+    }
+    
+    .logo {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor del logo. */
+        align-items: center; /* Alinea los elementos del logo verticalmente al centro. */
+    }
+    
+    .logo img {
+        width: 40px; /* Establece el ancho de la imagen del logo a 40px. */
+        height: 40px; /* Establece la altura de la imagen del logo a 40px. */
+    }
+    
+    .logo span {
+        font-size: 1.2em; /* Establece el tamaño de la fuente del texto dentro del logo a 1.2 veces el tamaño de la fuente predeterminada. */
+        margin-left: 10px; /* Aplica un margen de 10px a la izquierda del texto dentro del logo. */
+    }
+    
+    nav ul {
+        list-style: none; /* Elimina los estilos de lista predeterminados (puntos, números) del menú de navegación. */
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor de la lista de navegación. */
+        gap: 20px; /* Aplica un espacio de 20px entre cada elemento de la lista de navegación. */
+        margin: 0; /* Elimina el margen predeterminado de la lista de navegación. */
+        padding: 0; /* Elimina el relleno predeterminado de la lista de navegación. */
+    }
+    
+    nav ul li {
+        display: inline; /* Muestra los elementos de la lista de navegación en línea. */
+    }
+    
+    nav ul li a {
+        text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces en la navegación. */
+        color: #000; /* Establece el color del texto de los enlaces en la navegación a negro. */
+    }
+    
+    .benefits {
+        background-color: #ff0000; /* Establece el color de fondo a rojo. */
+        color: #fff; /* Establece el color del texto a blanco. */
+        padding: 5px 10px; /* Aplica un relleno de 5px arriba y abajo y 10px a los lados. */
+        border-radius: 5px; /* Aplica un radio de borde de 5px, haciendo que las esquinas sean redondeadas. */
+    }
+    
+    main {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor principal. */
+        justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor principal. */
+        align-items: center; /* Centra verticalmente los elementos dentro del contenedor principal. */
+        padding: 50px; /* Aplica un relleno de 50px alrededor del contenedor principal. */
+    }
+    
+    .hero {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor de la sección hero. */
+        align-items: center; /* Alinea los elementos de la sección hero verticalmente al centro. */
+        background-color: #fff; /* Establece el color de fondo a blanco. */
+        border-radius: 10px; /* Aplica un radio de borde de 10px, haciendo que las esquinas sean redondeadas. */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Aplica una sombra de caja alrededor del contenedor. */
+        overflow: hidden; /* Oculta cualquier contenido que se desborde fuera del contenedor con bordes redondeados. */
+    }
+    
+    .hero img {
+        width: 300px; /* Establece el ancho de la imagen dentro de la sección hero a 300px. */
+        height: auto; /* Ajusta la altura de la imagen proporcionalmente al ancho, manteniendo la relación de aspecto. */
+    }
+    
+    .hero-content {
+        padding: 20px; /* Aplica un relleno de 20px alrededor del contenido dentro de la sección hero. */
+    }
+    
+    .hero-content h1 {
+        font-size: 2em; /* Establece el tamaño de la fuente del título a 2 veces el tamaño de la fuente predeterminada. */
+        margin: 0; /* Elimina el margen predeterminado del título. */
+        color: #333; /* Establece el color del texto del título a un gris oscuro. */
+    }
+    
+    .hero-content .highlight {
+        color: #ff0000; /* Establece el color del texto resaltado a rojo. */
+    }
+    
+    .hero-content p {
+        font-size: 1.2em; /* Establece el tamaño de la fuente del párrafo a 1.2 veces el tamaño de la fuente predeterminada. */
+        margin: 10px 0; /* Aplica un margen de 10px arriba y abajo del párrafo, y elimina los márgenes laterales. */
+    }
+    
+    .hero-content ul {
+        list-style: none; /* Elimina los estilos de lista predeterminados del contenido de la sección hero. */
+        padding: 0; /* Elimina el relleno predeterminado de la lista en la sección hero. */
+    }
+    
+    .hero-content ul li {
+        margin: 5px 0; /* Aplica un margen de 5px arriba y abajo de cada elemento de la lista en la sección hero. */
+        font-size: 1em; /* Establece el tamaño de la fuente de los elementos de la lista al tamaño de la fuente predeterminada. */
+        color: #555; /* Establece el color del texto de los elementos de la lista a gris medio. */
+    }
+    
+    .cta-button {
+        display: inline-block; /* Hace que el botón de llamada a la acción se muestre en línea como un bloque. */
+        margin-top: 20px; /* Aplica un margen superior de 20px al botón de llamada a la acción. */
+        padding: 10px 20px; /* Aplica un relleno de 10px arriba y abajo y 20px a los lados del botón. */
+        background-color: #ff0000; /* Establece el color de fondo del botón a rojo. */
+        color: #fff; /* Establece el color del texto del botón a blanco. */
+        text-decoration: none; /* Elimina el subrayado predeterminado del enlace en el botón. */
+        border-radius: 5px; /* Aplica un radio de borde de 5px, haciendo que las esquinas sean redondeadas. */
+    }
+    
+    .cta-button:hover {
+        background-color: #cc0000; /* Cambia el color de fondo del botón a un rojo más oscuro cuando se pasa el ratón sobre él. */
+    }
+    
+    main {
+        padding: 20px; /* Aplica un relleno de 20px alrededor del contenedor principal. */
+    }
+    
+    .repair-section {
+        background-color: #fff; /* Establece el color de fondo a blanco. */
+        border-radius: 10px; /* Aplica un radio de borde de 10px, haciendo que las esquinas sean redondeadas. */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Aplica una sombra de caja alrededor del contenedor. */
+        padding: 20px; /* Aplica un relleno de 20px alrededor del contenido dentro de la sección de reparación. */
+    }
+    
+    .repair-section h2 {
+        text-align: center; /* Centra el texto del título horizontalmente. */
+        color: #333; /* Establece el color del texto del título a un gris oscuro. */
+    }
+    
+    .highlight {
+        color: #ff0000; /* Establece el color del texto resaltado a rojo. */
+    }
+    
+    .repair-section p {
+        text-align: center; /* Centra el texto del párrafo horizontalmente. */
+        font-size: 1.2em; /* Establece el tamaño de la fuente del párrafo a 1.2 veces el tamaño de la fuente predeterminada. */
+        color: #555; /* Establece el color del texto del párrafo a gris medio. */
+    }
+    
+    .repair-content {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor del contenido de reparación. */
+        justify-content: space-around; /* Distribuye el espacio libre entre los elementos del contenido de reparación, separándolos al máximo. */
+        margin: 20px 0; /* Aplica un margen de 20px arriba y abajo del contenedor del contenido de reparación. */
+    }
+    
+    .repair-image img {
+        width: 100%; /* Establece el ancho de la imagen al 100%
+    
+     del contenedor padre. */
+        height: auto; /* Ajusta la altura de la imagen proporcionalmente al ancho, manteniendo la relación de aspecto. */
+        border-radius: 10px; /* Aplica un radio de borde de 10px a la imagen, haciendo que las esquinas sean redondeadas. */
+        width: 300px; /* Establece el ancho de la imagen a 300px. */
+    }
+    
+    .repair-list {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor de la lista de reparación. */
+        justify-content: space-around; /* Distribuye el espacio libre entre los elementos de la lista de reparación, separándolos al máximo. */
+        margin-top: 20px; /* Aplica un margen superior de 20px al contenedor de la lista de reparación. */
+    }
+    
+    .repair-list ul {
+        list-style: none; /* Elimina los estilos de lista predeterminados de la lista de reparación. */
+        padding: 0; /* Elimina el relleno predeterminado de la lista de reparación. */
+        width: 30%; /* Establece el ancho de la lista de reparación al 30% del contenedor padre. */
+    }
+    
+    .repair-list ul li {
+        margin: 5px 0; /* Aplica un margen de 5px arriba y abajo de cada elemento de la lista de reparación. */
+        font-size: 1em; /* Establece el tamaño de la fuente de los elementos de la lista al tamaño de la fuente predeterminada. */
+        color: #555; /* Establece el color del texto de los elementos de la lista a gris medio. */
+    }
+    
+    .repair-list ul li strong {
+        color: #333; /* Establece el color del texto resaltado a un gris oscuro. */
+    }
+    
+    .hospital-section {
+        background-color: #ffffff; /* Establece el color de fondo a blanco. */
+        border-radius: 10px; /* Aplica un radio de borde de 10px, haciendo que las esquinas sean redondeadas. */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Aplica una sombra de caja alrededor del contenedor. */
+        padding: 20px; /* Aplica un relleno de 20px alrededor del contenido dentro de la sección del hospital. */
+    }
+    
+    .hospital-content {
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor del contenido del hospital. */
+        align-items: center; /* Alinea los elementos del contenido del hospital verticalmente al centro. */
+        justify-content: space-between; /* Distribuye el espacio libre entre los elementos del contenido del hospital, separándolos al máximo. */
+    }
+    
+    .hospital-image img {
+        width: 100%; /* Establece el ancho de la imagen al 100% del contenedor padre. */
+        height: auto; /* Ajusta la altura de la imagen proporcionalmente al ancho, manteniendo la relación de aspecto. */
+        border-radius: 10px; /* Aplica un radio de borde de 10px a la imagen, haciendo que las esquinas sean redondeadas. */
+        max-width: 400px; /* Establece el ancho máximo de la imagen a 400px. */
+        width: 900px; /* Establece el ancho de la imagen a 900px. */
+    }
+    
+    .hospital-text {
+        padding: 20px; /* Aplica un relleno de 20px alrededor del texto dentro de la sección del hospital. */
+    }
+    
+    .hospital-text h2 {
+        color: #333; /* Establece el color del texto del título a un gris oscuro. */
+        margin: 0 0 10px; /* Aplica un margen inferior de 10px al título y elimina los márgenes superior y laterales. */
+    }
+    
+    .highlight {
+        color: #ff0000; /* Establece el color del texto resaltado a rojo. */
+    }
+    
+    .hospital-text p {
+        font-size: 2.3em; /* Establece el tamaño de la fuente del párrafo a 2.3 veces el tamaño de la fuente predeterminada. */
+        color: #555; /* Establece el color del texto del párrafo a gris medio. */
+        margin: 10px 0; /* Aplica un margen de 10px arriba y abajo del párrafo, y elimina los márgenes laterales. */
+    }
+    
+    .hospital-text strong {
+        color: #333; /* Establece el color del texto resaltado a un gris oscuro. */
+    }
+    
+    .cta-button {
+        display: inline-block; /* Hace que el botón de llamada a la acción se muestre en línea como un bloque. */
+        margin-top: 20px; /* Aplica un margen superior de 20px al botón de llamada a la acción. */
+        padding: 10px 20px; /* Aplica un relleno de 10px arriba y abajo y 20px a los lados del botón. */
+        background-color: #ff0000; /* Establece el color de fondo del botón a rojo. */
+        color: #fff; /* Establece el color del texto del botón a blanco. */
+        text-decoration: none; /* Elimina el subrayado predeterminado del enlace en el botón. */
+        border-radius: 5px; /* Aplica un radio de borde de 5px, haciendo que las esquinas sean redondeadas. */
+    }
+    
+    .cta-button:hover {
+        background-color: #cc0000; /* Cambia el color de fondo del botón a un rojo más oscuro cuando se pasa el ratón sobre él. */
+    }
+    
+    footer {
+        background-color: #000; /* Establece el color de fondo a negro. */
+        color: #fff; /* Establece el color del texto a blanco. */
+        display: flex; /* Utiliza el modelo de caja flexible para el contenedor del pie de página. */
+        justify-content: space-around; /* Distribuye el espacio libre entre los elementos del pie de página, separándolos al máximo. */
+        padding: 20px 0; /* Aplica un relleno de 20px arriba y abajo y elimina los rellenos laterales del pie de página. */
+    }
+    
+    .footer-section {
+        width: 20%; /* Establece el ancho de cada sección del pie de página al 20% del contenedor padre. */
+    }
+    
+    .footer-section h2 {
+        font-size: 1.2em; /* Establece el tamaño de la fuente del título a 1.2 veces el tamaño de la fuente predeterminada. */
+        margin-bottom: 10px; /* Aplica un margen inferior de 10px al título. */
+    }
+    
+    .footer-section ul {
+        list-style: none; /* Elimina los estilos de lista predeterminados de las secciones del pie de página. */
+        padding: 0; /* Elimina el relleno predeterminado de las listas en las secciones del pie de página. */
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 10px; /* Aplica un margen inferior de 10px a cada elemento de la lista en las secciones del pie de página. */
+    }
+    
+    .footer-section ul li a {
+        color: #fff; /* Establece el color del texto de los enlaces en el pie de página a blanco. */
+        text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces en el pie de página. */
+    }
+    
+    .footer-section ul li a:hover {
+        text-decoration: underline; /* Subraya los enlaces cuando se pasa el ratón sobre ellos en el pie de página. */
+    }
+    
+    .blog-section h2 a {
+        color: red; /* Establece el color del texto de los enlaces en los títulos de la sección de blogs a rojo. */
+        text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces en los títulos de la sección de blogs. */
+    }
+    
+    .blog-section ul li a span {
+        color: #fff; /* Establece el color del texto dentro de los spans en los enlaces de la sección de blogs a blanco. */
+        display: block; /* Hace que el span se muestre como un bloque. */
+    }
+    
+    img {
+        vertical-align: middle; /* Alinea las imágenes verticalmente al centro respecto a su contenedor o texto adyacente. */
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/5726/assets/73418/large_doctoralia-mktpl-symbol-turquoise.png" alt="Cybertown Logo">
+            <span>Reparaciones Chamoy</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#tecnicos">Consolas de videojuegos</a></li>
+                <li><a href="#tecnicos">Computadoras</a></li>
+                <li><a href="#tecnicos">Celulares</a></li>
+                <li><a href="#tecnicos">Impresoras</a></li>
+                <li><a href="#">Sucursales y envíos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://ih1.redbubble.net/image.688855331.7977/st,small,507x507-pad,600x600,f8f8f8.u8.webp" alt="Reparación de Celulares">
+            <div class="hero-content">
+                <h1>Servicio experto en <span class="highlight">reparación de celulares</span></h1>
+                <p>Soluciones rápidas y efectivas para todos los modelos</p>
+                <ul>
+                    <li>¿No sabes en dónde arreglan celulares? Estás en el mejor lugar.</li>
+                    <li>Todas las marcas, diagnósticos precisos y soluciones eficientes, confiables y duraderas, utilizando sólo piezas de alta calidad.</li>
+                    <li>¡Revive tu dispositivo!</li>
+                </ul>
+                <a href="https://movil-tech.mx/" class="cta-button">Tus opciones de reparación</a>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="repair-section" id="tecnicos">
+            <h2>Técnicos en <span class="highlight">reparación de celulares</span></h2>
+            <p>Garantizando a tu equipo un funcionamiento correcto ante cualquier falla:</p>
+            <div class="repair-content">
+                <div class="repair-image">
+                    <img src="https://cybertown.mx/wp-content/uploads/2024/03/Reparacion-de-celulares-android-en-Mexico-01.webp" alt="Reparación Celular 1">
+                </div>
+                <div class="repair-image">
+                    <img src="https://cybertown.mx/wp-content/uploads/2024/03/Reparacion-de-celulares-android-en-Mexico-02.webp" alt="Reparación Celular 2">
+                </div>
+                <div class="repair-image">
+                    <img src="https://cybertown.mx/wp-content/uploads/2024/03/Reparacion-de-celulares-android-en-Mexico-03.webp" alt="Reparación Celular 3">
+                </div>
+            </div>
+            <div class="repair-list">
+                <ul>
+                    <li>Fallas de carga</li>
+                    <li>Cortos en la tarjeta</li>
+                    <li>Cámaras traseras</li>
+                    <li>“Sin Servicio”</li>
+                    <li>Pantalla rota o estrellada</li>
+                    <li>Reemplazo de display</li>
+                    <li>Fallas de audio</li>
+                    <li>Humedad</li>
+                    <li>Los mejores repuestos</li>
+                </ul>
+                <ul>
+                    <li>Problemas con sensores touch</li>
+                    <li>Eliminación de cuentas</li>
+                    <li>Restauración de cuentas</li>
+                    <li>Copias de seguridad</li>
+                    <li>Cambio de tapa</li>
+                    <li>Carga de sistema</li>
+                    <li>Actualizaciones de software</li>
+                    <li>Mantenimiento de celulares</li>
+                </ul>
+                <ul>
+                    <li><strong>IC de carga:</strong> El dispositivo no detecta el cargador, pierde batería rápido o varía su porcentaje</li>
+                    <li><strong>IC de audio:</strong> Problemas al activar el altavoz, grabar notas de voz o en el audio de llamadas</li>
+                    <li><strong>Falla de Backlight:</strong> El equipo tiene imagen, pero el display no se ilumina</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+
+    <div>
+        <main>
+            <section class="hospital-section">
+                <div class="hospital-content">
+                    <div class="hospital-image">
+                        <img src="https://cybertown.mx/wp-content/uploads/2024/03/cell-android-repair-1024x600-1.webp" alt="Técnico reparando celular">
+                    </div>
+                    <div class="hospital-text">
+                        <h2>Contamos con <span class="highlight">Hospital de celulares</span></h2>
+                        <p>Aquí, cada equipo móvil es tratado con el <strong>cuidado</strong> y la <strong>precisión</strong> que merece, <strong>alargando la vida útil</strong> de tu celular. <strong>¡Tu satisfacción</strong> es nuestra prioridad!</p>
+                        <a href="https://movil-tech.mx/precios" class="cta-button">Checa los precios de nuestro servicios</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    
+    <div>
+        <center>
+        <h1>VIDEO DE NUESTRO TRABAJO</h1>
+        
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5n0LUxEp4ww" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    </div>
+
+
+    <div>
+        <footer>
+            <div class="footer-section">
+                <h2><img src="" alt=""> Avisos de Privacidad  </h2>
+                <ul>
+                    
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Política de Garantía</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Reparaciones</h2>
+                <ul>
+                    <li><a href="#">Computadoras</a></li>
+                    <li><a href="#">Consolas</a></li>
+                    <li><a href="#">Celulares / iPhone</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Mac</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Sucursales</h2>
+                <ul>
+                    <li><a href="#">Matriz Misterios</a></li>
+                    <li><a href="#">Centros de recolección</a></li>
+                    <li><a href="#">Reparación de consolas por paquetería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section blog-section">
+                <h2><a href="#" class="blog-link">Blog</a></h2>
+                <ul>
+                    <li><a href="#">¿Interesado en formar parte de nuestro equipo?<br><span>Déjanos tus datos</span></a></li>
+                    <li><a href="#">¿Dudas de nuestro servicio?<br><span>Nosotros las resolvemos</span></a></li>
+                </ul>
+            </div>
+        </footer>
+    
+    </div>
+
+</body>
+</html>
